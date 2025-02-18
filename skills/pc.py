@@ -1,9 +1,11 @@
 import os
 
+from config.config import get_env
+
 
 def handle_intent(intent):
     commands = {
-        "TurnOnPCIntent": ("wakeonlan <MAC_ADDRESS>", "Ligando o computador."),
+        "TurnOnPCIntent": (f"wakeonlan {get_env('MAC_ADDRESS')}", "Ligando o computador."),
         "TurnOffPCIntent": ("shutdown /s /t 1", "Desligando o computador.")
     }
 
