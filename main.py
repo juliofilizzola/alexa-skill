@@ -1,4 +1,6 @@
 from flask import Flask, request, jsonify
+
+from config.config import get_env
 from skills.pc import handle_intent
 
 app = Flask(__name__)
@@ -12,4 +14,4 @@ def alexa_endpoint():
     return jsonify(response)
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=get_env('PORT'), debug=True)
