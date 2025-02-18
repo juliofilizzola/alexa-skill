@@ -1,7 +1,5 @@
-LABEL authors="Julio"
-# Use the official Python image from the Docker Hub
 FROM python:3.11-slim
-
+LABEL authors="Julio"
 # Set the working directory in the container
 WORKDIR /app
 
